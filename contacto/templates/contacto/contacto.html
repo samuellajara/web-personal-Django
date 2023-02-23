@@ -1,0 +1,25 @@
+{% extends "SamuelLajaraApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+   <div class="formularioContacto">
+
+      {% if "valido" in request.GET %}
+         <p style="color: aliceblue;">Informacion Enviada</p>
+      {% endif %}
+
+      <form action="" method="POST">
+         {% csrf_token %} <!-- MEDIDA DE SEGURIDAD -->
+         <table>
+            {{miFormulario.as_table}}
+         </table>
+         <input type="submit" value="Enviar">
+      </form>
+   </div>
+   
+{% endblock %}
+
+
+  

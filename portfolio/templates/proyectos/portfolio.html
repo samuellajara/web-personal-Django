@@ -1,0 +1,36 @@
+
+{% extends "SamuelLajaraApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+   {% for proyectos in portfolio %}
+
+   <!-- Heading -->
+   <section class="page-section clearfix">
+      <div class="container">
+      <div class="intro">
+         <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{proyectos.imagen.url}}" alt="" style="width: 50%;">
+         <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+            <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">{{proyectos.proyecto}}</span>
+            <span class="section-heading-upper">{{proyectos.descripcion}}</span>
+            <a href="{{proyectos.url}}" class="section-heading-upper"> Haz click para ir a la URL </a>
+            </h2>
+           
+         
+         </div>
+      </div>
+      </div>
+   </section>
+   
+   
+
+   {% endfor %}
+
+
+
+   
+   
+{% endblock %}
